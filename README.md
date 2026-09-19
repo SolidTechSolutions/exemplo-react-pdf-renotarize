@@ -1,26 +1,52 @@
-# SolidSign API - Example Front-end: PDF Renotarization (React)
+# 🇧🇷 SolidSign API - Front-end de Exemplo: Renotarização (DocTimeStamp) PDF (React)
 
-Example front-end for adding a new DocTimeStamp (renotarization) to a PDF —
-extends its proof of existence without requiring a signing certificate.
-Visual stamp positioning is intentionally not covered here (see the PDF
-signing examples for that). By default it talks to the
-[`exemplo-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-pdf-renotarize)
-example backend, which keeps the API credentials server-side — the
-recommended integration pattern. An optional "Direct to SolidSign API" mode
-lets you call the API straight from the browser, useful for a quick manual
-check, but it exposes the token in the browser.
+## Como funciona
+
+"Via example backend" (padrão) chama `POST /api/pdf/renotarize/form` no back-end de exemplo (`http://localhost:8100`), que repassa pra `POST /solidsign/dsig/extending/pdf/add-doctimestamp` da SolidSign API. "Direct to SolidSign API" (opcional) chama a API direto do navegador — só pra teste manual.
+
+## Requisitos
+
+Rode este back-end de exemplo localmente:
+
+- **Java**: [`exemplo-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-pdf-renotarize)
+
+- Um token JWT válido (`POST /solidsign/auth/token`)
+
+## Como rodar
+
+```bash
+npm install
+npm run dev
+```
+
+Abra `http://localhost:5173`, preencha o formulário e envie.
+
+## Variáveis do formulário
+
+| Campo | Significado | Default |
+|---|---|---|
+| `mode` | Via backend de exemplo (padrão) ou direto à API | `backend` |
+| `backendUrl` | URL do back-end de exemplo | `http://localhost:8100` |
+| `authorization` | Token JWT (Bearer) | (vazio) |
+| `documents` | Documento(s) a carimbar | (vazio) |
+| `hashAlgorithm` | Algoritmo de hash | `SHA256` |
+| `reason / location / contact` | Metadados do carimbo (opcionais) | (vazio) |
+
+---
+
+# 🇬🇧 SolidSign API - Example Front-end: PDF Renotarization (DocTimeStamp) (React)
 
 ## How it works
 
-- **Default mode (backend)**: `POST http://localhost:8100/api/pdf/renotarize/form`.
-- **Optional mode (direct)**: `POST {baseUrl}/solidsign/dsig/extending/pdf/add-doctimestamp`, with the token entered in the form.
+"Via example backend" (default) calls `POST /api/pdf/renotarize/form` on the example backend (`http://localhost:8100`), which forwards to `POST /solidsign/dsig/extending/pdf/add-doctimestamp` on the SolidSign API. "Direct to SolidSign API" (optional) calls the API straight from the browser — for quick manual testing only.
 
-> **Note:** as of September 2026, direct mode only works if your front-end's origin is on the SolidSign API's CORS allow-list (`solidsign.cors.allowed-origins`, which by default only includes the Portal SolidSign domains). Testing against the production API from `localhost` will get a 403 — use the default (backend) mode instead.
+## Requirements
 
-## Prerequisites
+Run this example backend locally:
 
-1. Run the [`exemplo-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-pdf-renotarize) backend locally (`mvn spring-boot:run`, default port `8100`) — or, for direct mode, have a valid JWT token.
-2. One or more PDFs to renotarize.
+- **Java**: [`exemplo-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-pdf-renotarize)
+
+- A valid JWT token (`POST /solidsign/auth/token`)
 
 ## Running
 
@@ -29,4 +55,15 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:5173`, upload the PDF(s) and renotarize.
+Open `http://localhost:5173`, fill in the form and submit.
+
+## Form fields
+
+| Field | Meaning | Default |
+|---|---|---|
+| `mode` | Via example backend (default) or direct to API | `backend` |
+| `backendUrl` | Example backend URL | `http://localhost:8100` |
+| `authorization` | JWT (Bearer) token | (empty) |
+| `documents` | Document(s) to timestamp | (empty) |
+| `hashAlgorithm` | Hash algorithm | `SHA256` |
+| `reason / location / contact` | Timestamp metadata (optional) | (empty) |
