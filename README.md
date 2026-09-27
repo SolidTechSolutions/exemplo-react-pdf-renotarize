@@ -6,9 +6,15 @@
 
 ## Requisitos
 
-Rode este back-end de exemplo localmente:
+Rode **um** destes back-ends de exemplo localmente (portas diferentes — ajuste `backendUrl` no formulário pra combinar):
 
-- **Java**: [`exemplo-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-pdf-renotarize)
+- **Java** (porta 8100): [`exemplo-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-pdf-renotarize)
+- **C#** (porta 5097): [`exemplo-csharp-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-csharp-integracao-pdf-renotarize)
+- **JavaScript** (porta 8099): [`exemplo-javascript-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-javascript-integracao-pdf-renotarize)
+- **TypeScript** (porta 8099): [`exemplo-typescript-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-typescript-integracao-pdf-renotarize)
+- **Node.js** (porta 3099): [`exemplo-nodejs-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-nodejs-integracao-pdf-renotarize)
+- **PHP** (porta 8099): [`exemplo-php-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-php-integracao-pdf-renotarize)
+- **Python** (porta 8099): [`exemplo-python-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-python-integracao-pdf-renotarize)
 
 - Um token JWT válido (`POST /solidsign/auth/token`)
 
@@ -42,9 +48,15 @@ Abra `http://localhost:5173`, preencha o formulário e envie.
 
 ## Requirements
 
-Run this example backend locally:
+Run **one** of these example backends locally (different ports — adjust `backendUrl` in the form to match):
 
-- **Java**: [`exemplo-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-pdf-renotarize)
+- **Java** (port 8100): [`exemplo-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-integracao-pdf-renotarize)
+- **C#** (port 5097): [`exemplo-csharp-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-csharp-integracao-pdf-renotarize)
+- **JavaScript** (port 8099): [`exemplo-javascript-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-javascript-integracao-pdf-renotarize)
+- **TypeScript** (port 8099): [`exemplo-typescript-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-typescript-integracao-pdf-renotarize)
+- **Node.js** (port 3099): [`exemplo-nodejs-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-nodejs-integracao-pdf-renotarize)
+- **PHP** (port 8099): [`exemplo-php-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-php-integracao-pdf-renotarize)
+- **Python** (port 8099): [`exemplo-python-integracao-pdf-renotarize`](https://github.com/SolidTechSolutions/exemplo-python-integracao-pdf-renotarize)
 
 - A valid JWT token (`POST /solidsign/auth/token`)
 
